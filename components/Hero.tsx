@@ -41,7 +41,7 @@ const STUDENTS = [
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 sm:pt-28 lg:pt-24 lg:pb-0 overflow-hidden bg-spain-offwhite">
+    <section className="relative min-h-screen flex items-center pt-24 pb-24 sm:pt-28 sm:pb-28 lg:pt-24 lg:pb-32 overflow-hidden bg-spain-offwhite">
         {/* Subtle Ambient Background Elements */}
         <div className="absolute top-[-5%] right-[5%] w-[40%] h-[40%] bg-spain-yellow opacity-[0.03] blur-[140px] rounded-full pointer-events-none"></div>
         <div className="absolute bottom-[-5%] left-[5%] w-[40%] h-[40%] bg-spain-red opacity-[0.03] blur-[140px] rounded-full pointer-events-none"></div>
@@ -51,29 +51,29 @@ const Hero: React.FC = () => {
                 
                 {/* Text Content Area */}
                 <div className="lg:col-span-6 xl:col-span-7 animate-fade-up text-center lg:text-left z-20">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[5.5rem] font-heading font-semibold tracking-tighter text-spain-charcoal leading-[0.9] mb-6 lg:mb-8">
+                    <h1 className="text-[2.7rem] sm:text-[3.6rem] md:text-[4.5rem] lg:text-[4.95rem] font-heading font-semibold tracking-tighter text-spain-charcoal leading-[1.0] mb-6 lg:mb-8">
                         The only <br className="hidden xl:block" />
                         <span className="font-serif italic font-normal text-spain-yellow">
                             Study-in-Spain
                         </span> <br />
                         program for <br className="hidden md:block xl:hidden" />
                         {/* Swapped Green for Red as requested */}
-                        <span className="text-spain-red">Southeastern Asians</span>.
+                        <span className="text-spain-red">Southeast <br />Asians</span>.
                     </h1>
                     
-                    <p className="text-sm sm:text-base md:text-lg text-gray-500 max-w-lg mx-auto lg:mx-0 mb-6 lg:mb-8 leading-relaxed font-light font-sans">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-lg mx-auto lg:mx-0 mb-6 lg:mb-8 leading-relaxed font-medium font-sans">
                         {HERO_CONTENT.subheading}
                     </p>
 
-                    {/* Value Statement */}
-                    <p className="text-xs text-spain-green font-medium mb-6 max-w-md mx-auto lg:mx-0">
-                        Visas · Admissions · Housing · Culture · Careers · Community
-                    </p>
-
-                    {/* Social Proof */}
-                    <p className="text-xs text-gray-400 mb-6 italic">
-                        Guided by alumni living in Spain — real answers, real timelines.
-                    </p>
+                    {/* Minimal Value Pills */}
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+                        {['Visas', 'Housing', 'Careers', 'Community'].map((item, i) => (
+                            <span key={item} className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/60 backdrop-blur-sm border border-spain-charcoal/5 text-[11px] font-semibold text-spain-charcoal/80">
+                                <span className={`w-1.5 h-1.5 rounded-full mr-2 ${i % 2 === 0 ? 'bg-spain-red' : 'bg-spain-green'}`}></span>
+                                {item}
+                            </span>
+                        ))}
+                    </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                         <button className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-base font-bold text-white bg-spain-green rounded-full shadow-lg shadow-spain-green/25 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-spain-green/40 focus:outline-none border-0">

@@ -20,14 +20,14 @@
             },
             colors: {
               spain: {
-                red: '#AA151B', // Royal Crimson
+                red: '#AA151B',
                 redLight: '#D92A2A',
-                yellow: '#F1BF00', // Spanish Gold
+                yellow: '#F1BF00',
                 yellowLight: '#FFD700',
-                green: '#00A859', // Vibrante Emerald
+                green: '#00A859',
                 greenDark: '#008542', 
-                charcoal: '#303030', // Soft Matte Black / Deep Gray
-                offwhite: '#FDFCF6', // Alabaster
+                charcoal: '#303030',
+                offwhite: '#FDFCF6',
               }
             },
             borderRadius: {
@@ -47,7 +47,6 @@
       }
     </script>
     <style>
-      /* Custom Red Arrow Cursor */
       * {
         cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='%23AA151B' stroke='white' stroke-width='1.5'><path d='M5 3l14 9-14 9V3z'/></svg>"), auto !important;
       }
@@ -64,7 +63,7 @@
         border: 1px solid rgba(255, 255, 255, 0.4);
       }
       .glass-dark {
-        background: rgba(48, 48, 48, 0.85); /* Updated to match new charcoal */
+        background: rgba(48, 48, 48, 0.85);
         backdrop-filter: blur(32px);
         -webkit-backdrop-filter: blur(32px);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -94,19 +93,9 @@
       }
       .animate-fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

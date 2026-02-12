@@ -18,11 +18,11 @@ export const FEATURES: Feature[] = [
     description: "What takes you from surviving to thriving",
     icon: Rocket,
     items: [
-        "Practical simulations to help you navigate daily life—making appointments, handling paperwork, finding accommodation, visiting the doctor, and more.",
-        "24/7 guidance and support for administrative processes, housing, visa matters, and healthcare.",
-        "Food and health advice to help you settle into your new environment with confidence.",
-        "Entrepreneurship support and guidance for those interested in innovation, business, and startup opportunities in Spain.",
-        "First week orientation: city tour, mobile data, transport cards, banking, safety tips."
+      "Practical simulations to help you navigate daily life—making appointments, handling paperwork, finding accommodation, visiting the doctor, and more.",
+      "24/7 guidance and support for administrative processes, housing, visa matters, and healthcare.",
+      "Food and health advice to help you settle into your new environment with confidence.",
+      "Entrepreneurship support and guidance for those interested in innovation, business, and startup opportunities in Spain.",
+      "First week orientation: city tour, mobile data, transport cards, banking, safety tips."
     ]
   },
   {
@@ -30,9 +30,9 @@ export const FEATURES: Feature[] = [
     description: "Cultural Integration & Local Experiences",
     icon: Sun,
     items: [
-        "Language exchange meetups and social events with local students.",
-        "Cultural tours, festivals, and activities to immerse yourself in Spanish life.",
-        "Orientation sessions and city tours to help you settle in and explore your new surroundings."
+      "Language exchange meetups and social events with local students.",
+      "Cultural tours, festivals, and activities to immerse yourself in Spanish life.",
+      "Orientation sessions and city tours to help you settle in and explore your new surroundings."
     ]
   },
   {
@@ -40,9 +40,9 @@ export const FEATURES: Feature[] = [
     description: "Language, University & Visa",
     icon: Shield,
     items: [
-        "Language School: Intensive Spanish language programs to help you gain fluency for academic, social, and everyday life.",
-        "Academic Counseling (Entry & University Admissions): Personalized guidance to help you choose the right academic pathway, prepare your applications, and secure university admission.",
-        "Visa Processing: Comprehensive support for your student visa application, residence permit renewals, and university documentation."
+      "Language School: Intensive Spanish language programs to help you gain fluency for academic, social, and everyday life.",
+      "Academic Counseling (Entry & University Admissions): Personalized guidance to help you choose the right academic pathway, prepare your applications, and secure university admission.",
+      "Visa Processing: Comprehensive support for your student visa application, residence permit renewals, and university documentation."
     ]
   },
   {
@@ -50,10 +50,10 @@ export const FEATURES: Feature[] = [
     description: "Career & Future Planning",
     icon: Briefcase,
     items: [
-        "Career seminars featuring professors, industry professionals, and alumni sharing insights and advice.",
-        "Workshops on networking, personal branding, and how to stand out in Spain's job market.",
-        "Guidance for finding internships, part-time work, and post-study career opportunities.",
-        "Support for navigating post-study work visas and accessing alumni career networks."
+      "Career seminars featuring professors, industry professionals, and alumni sharing insights and advice.",
+      "Workshops on networking, personal branding, and how to stand out in Spain's job market.",
+      "Guidance for finding internships, part-time work, and post-study career opportunities.",
+      "Support for navigating post-study work visas and accessing alumni career networks."
     ]
   },
   {
@@ -61,9 +61,9 @@ export const FEATURES: Feature[] = [
     description: "Community & Wellbeing",
     icon: Users,
     items: [
-        "A strong community of Southeast Asian students and access to local networks.",
-        "Emotional support and personalized guidance to help you cope with the challenges of living abroad.",
-        "Connection with your embassy to ensure you always have the support of your home country."
+      "A strong community of Southeast Asian students and access to local networks.",
+      "Emotional support and personalized guidance to help you cope with the challenges of living abroad.",
+      "Connection with your embassy to ensure you always have the support of your home country."
     ]
   },
 ];
@@ -74,10 +74,10 @@ export const TIMELINE_STEPS: TimelineStep[] = [
     title: "Pre-Arrival",
     description: "Laying the groundwork before you even pack.",
     items: [
-        "Pre-departure Support", 
-        "Student Visa Assistance", 
-        "Health Insurance Support", 
-        "Accommodation Arrangements"
+      "Pre-departure Support",
+      "Student Visa Assistance",
+      "Health Insurance Support",
+      "Accommodation Arrangements"
     ]
   },
   {
@@ -85,11 +85,11 @@ export const TIMELINE_STEPS: TimelineStep[] = [
     title: "Post-Arrival",
     description: "Touchdown. We handle the landing logistics.",
     items: [
-        "Airport pick-up", 
-        "Welcoming Orientation: City tour & Cultural Guidance", 
-        "Bank Account Setup", 
-        "Mobile Data & Transportation Card",
-        "Residence Permit Application"
+      "Airport pick-up",
+      "Welcoming Orientation: City tour & Cultural Guidance",
+      "Bank Account Setup",
+      "Mobile Data & Transportation Card",
+      "Residence Permit Application"
     ]
   },
   {
@@ -97,14 +97,14 @@ export const TIMELINE_STEPS: TimelineStep[] = [
     title: "During the Program",
     description: "Academic & Personal Support.",
     items: [
-        "Emergency Contacts", 
-        "Spanish Language Course", 
-        "University Admission & Academic Prep", 
-        "One-on-one Academic Counseling",
-        "Career Guidance & Internship Opportunities",
-        "Psychological Counselling",
-        "Seminars with Industry Professionals",
-        "Food & Health Advice"
+      "Emergency Contacts",
+      "Spanish Language Course",
+      "University Admission & Academic Prep",
+      "One-on-one Academic Counseling",
+      "Career Guidance & Internship Opportunities",
+      "Psychological Counselling",
+      "Seminars with Industry Professionals",
+      "Food & Health Advice"
     ]
   },
   {
@@ -112,10 +112,10 @@ export const TIMELINE_STEPS: TimelineStep[] = [
     title: "Post-Program & Alumni",
     description: "Your journey doesn't end when classes finish.",
     items: [
-        "Continued Legal Support", 
-        "Erasmus & Study Abroad Guidance", 
-        "Alumni Network & Career Support",
-        "Seville Community Access"
+      "Continued Legal Support",
+      "Erasmus & Study Abroad Guidance",
+      "Alumni Network & Career Support",
+      "Seville Community Access"
     ]
   },
 ];
@@ -131,19 +131,19 @@ export const DESTINATIONS: Destination[] = [
     city: "Barcelona",
     tagline: "Coastal Innovation",
     description: "Where tech meets the Mediterranean. A hub for design, startups, and creativity.",
-    image: "https://drive.google.com/thumbnail?id=1l2uLskzj9oXSpFXJDIHojazXfUsJZ8z8&sz=w1000"
+    image: "/barcelona.jpg"
   },
   {
     city: "Valencia",
     tagline: "The Sun City",
     description: "Affordable, vibrant, and home to the City of Arts and Sciences. The perfect student balance.",
-    image: "https://drive.google.com/thumbnail?id=1wX4v0it3F0qQwnUfWdHFOVST_AWycFKj&sz=w1000"
+    image: "/valencia.jpg"
   },
   {
     city: "Seville",
     tagline: "Soul of Andalucia",
     description: "Rich tradition, flamenco, and history. Experience the true depth of Spanish heritage.",
-    image: "https://drive.google.com/thumbnail?id=1Vy_Yqnlgo9SA7oFIw11_Xk-FQ75Hd1fA&sz=w1000"
+    image: "/seville.jpg"
   }
 ];
 

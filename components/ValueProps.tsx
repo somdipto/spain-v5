@@ -4,6 +4,79 @@ import { Feature } from '../types';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 const ValueProps: React.FC = () => {
+  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
+
+  useEffect(() => {
+    const updateScreenSize = () => {
+      if (window.innerWidth < 768) setScreenSize('mobile');
+      else if (window.innerWidth < 1024) setScreenSize('tablet');
+      else setScreenSize('desktop');
+    };
+    updateScreenSize();
+    window.addEventListener('resize', updateScreenSize);
+    return () => window.removeEventListener('resize', updateScreenSize);
+  }, []);
+
+    // Smart algorithm: Calculate optimal height based on content
+  const calculateOptimalHeight = (feature: Feature) => {
+    const items = feature.items;
+    const totalChars = items.reduce((sum, item) => sum + item.length, 0);
+    const avgCharsPerItem = totalChars / items.length;
+    const itemCount = items.length;
+    
+    // Special handling for The Boosters (index 0) - make it bigger
+    if (feature.title === 'The Boosters') {
+      const baseHeight = 200; // Increased base height
+      const heightPerChar = 0.5; // Increased char height
+      const heightPerItem = 25; // Increased item height
+      const calculatedHeight = baseHeight + (totalChars * heightPerChar) + (itemCount * heightPerItem);
+      const minHeight = 300; // Increased min height
+      const maxHeight = 450; // Increased max height
+      return Math.max(minHeight, Math.min(maxHeight, calculatedHeight));
+    }
+    
+    // Normal calculation for other cards
+    const baseHeight = 160; // Reduced from 200
+    const heightPerChar = 0.4; // Reduced from 0.4
+    const heightPerItem = 15; // Reduced from 15
+    
+    const calculatedHeight = baseHeight + (totalChars * heightPerChar) + (itemCount * heightPerItem);
+    const minHeight = 220; // Reduced from 220
+    const maxHeight = 350; // Reduced from 350
+    
+    return Math.max(minHeight, Math.min(maxHeight, calculatedHeight));
+  };
+
+  // Smart algorithm: Calculate optimal grid based on content and screen size
+  const getOptimalGrid = () => {
+    const heights = FEATURES.map(f => calculateOptimalHeight(f));
+    const maxHeight = Math.max(...heights);
+    
+    if (screenSize === 'mobile') {
+      return {
+        cols: 'grid-cols-1',
+        rows: `auto-rows-[${maxHeight}px]`,
+        gap: 'gap-3'
+      };
+    }
+    
+    if (screenSize === 'tablet') {
+      return {
+        cols: 'grid-cols-2',
+        rows: `auto-rows-[${maxHeight}px]`,
+        gap: 'gap-3'
+      };
+    }
+    
+    // Desktop: Smart 4-column layout with smaller heights
+    return {
+      cols: 'grid-cols-4',
+      rows: `auto-rows-[${maxHeight}px]`,
+      gap: 'gap-3'
+    };
+  };
+
+  const optimalGrid = getOptimalGrid();
   return (
     <section id="offer" className="py-24 px-6 bg-spain-offwhite relative overflow-hidden">
       {/* Background Deep Blurs */}
@@ -11,19 +84,68 @@ const ValueProps: React.FC = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16 flex flex-col items-center text-center">
-            <span className="text-spain-green font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Exquisite Support</span>
+            <span className="text-spain-green font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Your Study in Spain starter pack</span>
             <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tighter text-spain-charcoal mb-6 leading-none">
               What We <span className="font-serif italic font-normal text-spain-yellow">Offer</span>
             </h2>
-            <p className="text-gray-500 text-lg font-sans font-light leading-relaxed max-w-2xl mx-auto">
-              Our comprehensive suite of services is designed to handle the intricate complexities of European relocation.
+            <div className="text-gray-500 text-lg font-sans font-light leading-relaxed max-w-2xl mx-auto mb-6">
+              <p className="mb-4">Spain Academy is your all-in-one onboarding kit for life in Spain. From visas and university admissions to cultural immersion and community support, we make sure you arrive prepared, feel at home, and have everything you need to thrive.</p>
+            </div>
+            
+            {/* Visual Service Icons */}
+            <div className="flex flex-wrap justify-center items-center gap-8 max-w-3xl mx-auto mb-8">
+              <div className="flex flex-col items-center group">
+                <svg className="w-5 h-5 text-gray-400 mb-2 group-hover:text-spain-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span className="text-xs text-gray-500 font-medium">Visas</span>
+              </div>
+              
+              <div className="flex flex-col items-center group">
+                <svg className="w-5 h-5 text-gray-400 mb-2 group-hover:text-spain-yellow transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+                <span className="text-xs text-gray-500 font-medium">Admissions</span>
+              </div>
+              
+              <div className="flex flex-col items-center group">
+                <svg className="w-5 h-5 text-gray-400 mb-2 group-hover:text-spain-green transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span className="text-xs text-gray-500 font-medium">Housing</span>
+              </div>
+              
+              <div className="flex flex-col items-center group">
+                <svg className="w-5 h-5 text-gray-400 mb-2 group-hover:text-spain-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <span className="text-xs text-gray-500 font-medium">Culture</span>
+              </div>
+              
+              <div className="flex flex-col items-center group">
+                <svg className="w-5 h-5 text-gray-400 mb-2 group-hover:text-spain-yellow transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6m0 0v6a2 2 0 01-2 2h-4a2 2 0 01-2-2V6" />
+                </svg>
+                <span className="text-xs text-gray-500 font-medium">Careers</span>
+              </div>
+              
+              <div className="flex flex-col items-center group">
+                <svg className="w-5 h-5 text-gray-400 mb-2 group-hover:text-spain-green transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span className="text-xs text-gray-500 font-medium">Community</span>
+              </div>
+            </div>
+            <p className="text-gray-400 text-xs font-sans font-light leading-relaxed max-w-lg mx-auto mt-3 italic opacity-70">
+              You don't have to figure this out at 2AM on your own.
             </p>
         </div>
 
-        {/* Asymmetric Bento Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[280px] sm:auto-rows-[300px] md:auto-rows-[320px]">
+        {/* Dynamic Height Grid Layout */}
+        <div className={`grid ${optimalGrid.cols} ${optimalGrid.rows} ${optimalGrid.gap}`}>
           {FEATURES.map((feature, index) => (
-             <FlipCard key={index} feature={feature} index={index} />
+             <FlipCard key={index} feature={feature} index={index} screenSize={screenSize} />
           ))}
         </div>
       </div>
@@ -35,30 +157,55 @@ const ValueProps: React.FC = () => {
 interface FlipCardProps {
     feature: Feature;
     index: number;
+    screenSize: 'mobile' | 'tablet' | 'desktop';
 }
 
-const FlipCard: React.FC<FlipCardProps> = ({ feature, index }) => {
+const FlipCard: React.FC<FlipCardProps> = ({ feature, index, screenSize }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const [isFlipped, setIsFlipped] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     
-    // Asymmetric grid spans: 0 (wide), 1 (std), 2 (std), 3 (wide), 4 (std)
-    const getGridClass = (idx: number) => {
-        if (idx === 0) return 'sm:col-span-1 md:col-span-1 lg:col-span-2 lg:row-span-1';
-        if (idx === 1) return 'sm:col-span-1 md:col-span-1 lg:col-span-1 lg:row-span-2';
-        if (idx === 2) return 'sm:col-span-1 md:col-span-1 lg:col-span-1';
-        if (idx === 3) return 'sm:col-span-1 md:col-span-1 lg:col-span-2';
-        return 'sm:col-span-1 md:col-span-1 lg:col-span-1';
+    // Smart Responsive Grid: Adapts to content and screen size
+    const getGridClass = (idx: number, screen: 'mobile' | 'tablet' | 'desktop') => {
+        const contentLength = FEATURES[idx].items.length;
+        const contentChars = FEATURES[idx].items.reduce((sum, item) => sum + item.length, 0);
+        
+        if (screen === 'mobile') {
+            return 'col-span-1 row-span-1'; // All cards same size on mobile
+        }
+        
+        if (screen === 'tablet') {
+            // Tablet: 2-column layout
+            if (contentLength >= 5) return 'col-span-2 row-span-1'; // The Boosters - wide
+            if (contentLength >= 4) return 'col-span-2 row-span-1'; // Future Tools - wide
+            return 'col-span-1 row-span-1'; // Others - standard
+        }
+        
+        // Desktop: 4-column layout with smart sizing
+        if (contentLength >= 5) return 'col-span-2 row-span-1'; // The Boosters - wide
+        if (contentLength >= 4) return 'col-span-2 row-span-1'; // Future Tools - wide
+        if (idx === 4) return 'col-span-2 row-span-1'; // Your Circle - make wider to fill space
+        return 'col-span-1 row-span-1'; // Others - standard
+    };
+
+    // Calculate optimal text size based on content length
+    const getOptimalTextSize = (contentChars: number) => {
+        if (contentChars > 500) return 'text-sm'; // Very long content
+        if (contentChars > 300) return 'text-xs'; // Long content
+        return 'text-xs'; // Standard
     };
     
-    // Theme Logic: Red (0, 3), Yellow (1), Green (2, 4)
+    // Original Theme Logic: Red(0,3), Yellow(1), Green(2,4)
     const getTheme = (idx: number) => {
+        if (idx === 0 || idx === 3) return 'red';
         if (idx === 1) return 'yellow';
-        if (idx === 2 || idx === 4) return 'green';
-        return 'red';
+        return 'green';
     };
     
+    const gridClass = getGridClass(index, screenSize);
     const theme = getTheme(index);
+    const contentChars = feature.items.reduce((sum, item) => sum + item.length, 0);
+    const optimalTextSize = getOptimalTextSize(contentChars);
 
     // Scroll Observer: Flips card when it enters the center of the viewport
     useEffect(() => {
@@ -126,8 +273,16 @@ const FlipCard: React.FC<FlipCardProps> = ({ feature, index }) => {
             ref={cardRef}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className={`group perspective-1000 cursor-pointer min-h-[280px] sm:min-h-[300px] md:min-h-[320px] ${getGridClass(index)}`}
+            className={`group perspective-1000 cursor-pointer ${gridClass} relative`}
         >
+            {/* Background themed shadow */}
+            <div className={`absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] transition-all duration-1000 ease-in-out ${
+                theme === 'red' ? 'bg-red-500/20 blur-xl' :
+                theme === 'yellow' ? 'bg-yellow-500/20 blur-xl' :
+                'bg-green-500/20 blur-xl'
+            } -z-10 ${
+                isHovered ? 'scale-105 opacity-30' : 'scale-100 opacity-20'
+            }`}></div>
             <div className={`
                 relative w-full h-full transition-all duration-1000 transform-style-3d
                 ${isHovered ? '' : (isFlipped ? 'rotate-y-180' : '')}
@@ -157,7 +312,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ feature, index }) => {
                         <p className={`text-[10px] sm:text-xs uppercase tracking-widest font-bold opacity-60 mt-4 flex items-center gap-2
                              ${textColors[theme]}
                         `}>
-                            Tap to reveal <ArrowUpRight size={12} />
+                            Hover to reveal <ArrowUpRight size={12} />
                         </p>
                     </div>
 
@@ -184,21 +339,17 @@ const FlipCard: React.FC<FlipCardProps> = ({ feature, index }) => {
                         </h3>
                      </div>
 
-                    <ul className="space-y-3 mb-8 w-full">
+                    <ul className="space-y-3 mb-4 w-full">
                         {feature.items?.map((item: string, i: number) => (
-                            <li key={i} className="flex items-start text-xs sm:text-sm font-medium text-spain-charcoal/80">
-                                <CheckCircle2 size={14} className={`mr-2 sm:mr-3 mt-0.5 shrink-0 ${theme === 'green' ? 'text-spain-green' : theme === 'yellow' ? 'text-spain-yellow' : 'text-spain-red'}`} />
+                            <li key={i} className={`flex items-start font-medium leading-relaxed ${optimalTextSize} text-spain-charcoal/80`}>
+                                <CheckCircle2 size={12} className={`mr-2 sm:mr-3 mt-0.5 shrink-0 ${theme === 'green' ? 'text-spain-green' : theme === 'yellow' ? 'text-spain-yellow' : 'text-spain-red'}`} />
                                 <span className="leading-snug">{item}</span>
                             </li>
                         ))}
                     </ul>
 
-                    <button className={`
-                        mt-auto w-full py-2 sm:py-3 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] transition-all
-                        ${buttonStyles[theme]}
-                    `}>
-                        More Info
-                    </button>
+                    {/* Bottom decorative line */}
+                    <div className="h-px bg-spain-charcoal/20 mt-4"></div>
                     
                     {/* Background Texture */}
                     <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grains.vercel.app/grain.png')] pointer-events-none"></div>

@@ -2,7 +2,6 @@ import { FileText, Coffee, Briefcase, Rocket, Sun, Globe, BookOpen, Users, Heart
 import { NavItem, Feature, TimelineStep, FaqItem, Testimonial, Destination } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Book', href: 'contact' },
   { label: 'The Team', href: 'team' },
   { label: 'Blog', href: 'blog' },
   { label: 'Content', href: 'content' },
@@ -10,63 +9,61 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const HERO_CONTENT = {
   headline: "The only Study-in-Spain program for Southeast Asians",
-  subheading: "Any questions big or small, We are here to listen, support, and guide. So, what are you waiting for?",
+  subheading: "Any questions big or small, we are here to listen, support, and guide. So, what are you waiting for?",
 };
 
 export const FEATURES: Feature[] = [
   {
-    title: "The Essentials",
-    description: "Everything that gets you here.",
-    icon: Shield,
+    title: "The Boosters",
+    description: "What takes you from surviving to thriving",
+    icon: Rocket,
     items: [
-        "Student Visa Assistance (End-to-end)",
-        "University Admission & Placement",
-        "Health Insurance Setup",
-        "Accommodation/Housing Search"
+        "Practical simulations to help you navigate daily life—making appointments, handling paperwork, finding accommodation, visiting the doctor, and more.",
+        "24/7 guidance and support for administrative processes, housing, visa matters, and healthcare.",
+        "Food and health advice to help you settle into your new environment with confidence.",
+        "Entrepreneurship support and guidance for those interested in innovation, business, and startup opportunities in Spain.",
+        "First week orientation: city tour, mobile data, transport cards, banking, safety tips."
     ]
   },
   {
     title: "Real Life in Spain",
-    description: "We help you blend in, not just move in.",
+    description: "Cultural Integration & Local Experiences",
     icon: Sun,
     items: [
-        "City Orientation & Transport Cards",
-        "Bank Account Setup",
-        "Cultural Integration (Local norms)",
-        "Where to buy rice & soy sauce (Asian mart guide)"
+        "Language exchange meetups and social events with local students.",
+        "Cultural tours, festivals, and activities to immerse yourself in Spanish life.",
+        "Orientation sessions and city tours to help you settle in and explore your new surroundings."
     ]
   },
   {
-    title: "Future-Proof Tools",
-    description: "Building the runway for your professional life.",
+    title: "The Essentials",
+    description: "Language, University & Visa",
+    icon: Shield,
+    items: [
+        "Language School: Intensive Spanish language programs to help you gain fluency for academic, social, and everyday life.",
+        "Academic Counseling (Entry & University Admissions): Personalized guidance to help you choose the right academic pathway, prepare your applications, and secure university admission.",
+        "Visa Processing: Comprehensive support for your student visa application, residence permit renewals, and university documentation."
+    ]
+  },
+  {
+    title: "Future Proof Tools",
+    description: "Career & Future Planning",
     icon: Briefcase,
     items: [
-        "CV & Cover Letter Adaptation",
-        "Interview Simulations",
-        "Internship Search Support",
-        "Networking with Industry Pros"
-    ]
-  },
-  {
-    title: "The Boosters",
-    description: "What takes you from surviving to thriving.",
-    icon: Rocket,
-    items: [
-        "1-on-1 Academic Counseling",
-        "Psychological Counseling",
-        "24/7 Emergency Support",
-        "Lifetime Alumni Community Access"
+        "Career seminars featuring professors, industry professionals, and alumni sharing insights and advice.",
+        "Workshops on networking, personal branding, and how to stand out in Spain's job market.",
+        "Guidance for finding internships, part-time work, and post-study career opportunities.",
+        "Support for navigating post-study work visas and accessing alumni career networks."
     ]
   },
   {
     title: "Your Circle Here",
-    description: "Community & Wellbeing for Southeast Asian students.",
+    description: "Community & Wellbeing",
     icon: Users,
     items: [
-        "Strong community of Southeast Asian students",
-        "Emotional support & personalized guidance",
-        "Connection with your embassy",
-        "Always-on support: Emergency contacts"
+        "A strong community of Southeast Asian students and access to local networks.",
+        "Emotional support and personalized guidance to help you cope with the challenges of living abroad.",
+        "Connection with your embassy to ensure you always have the support of your home country."
     ]
   },
 ];
@@ -118,7 +115,7 @@ export const TIMELINE_STEPS: TimelineStep[] = [
         "Continued Legal Support", 
         "Erasmus & Study Abroad Guidance", 
         "Alumni Network & Career Support",
-        "Lifetime Community Access"
+        "Seville Community Access"
     ]
   },
 ];
@@ -134,19 +131,19 @@ export const DESTINATIONS: Destination[] = [
     city: "Barcelona",
     tagline: "Coastal Innovation",
     description: "Where tech meets the Mediterranean. A hub for design, startups, and creativity.",
-    image: "/barcelona.jpg"
+    image: "https://drive.google.com/thumbnail?id=1l2uLskzj9oXSpFXJDIHojazXfUsJZ8z8&sz=w1000"
   },
   {
     city: "Valencia",
     tagline: "The Sun City",
     description: "Affordable, vibrant, and home to the City of Arts and Sciences. The perfect student balance.",
-    image: "/valencia.jpg"
+    image: "https://drive.google.com/thumbnail?id=1wX4v0it3F0qQwnUfWdHFOVST_AWycFKj&sz=w1000"
   },
   {
     city: "Seville",
     tagline: "Soul of Andalucia",
     description: "Rich tradition, flamenco, and history. Experience the true depth of Spanish heritage.",
-    image: "/seville.jpg"
+    image: "https://drive.google.com/thumbnail?id=1Vy_Yqnlgo9SA7oFIw11_Xk-FQ75Hd1fA&sz=w1000"
   }
 ];
 
@@ -178,9 +175,10 @@ export const FAQS: FaqItem[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { name: "Melina", role: "Human Nutrition", location: "URV", quote: "Spain taught me how to live well—through food, friendships, and freedom.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Michael", role: "Art Conservation", location: "UGR Granada", quote: "Every day in Granada inspires me to preserve beauty that tells a story.", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" },
-  { name: "Britney", role: "Fashion Design", location: "Barcelona", quote: "Barcelona sparked my creativity and gave me the confidence to be myself.", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" },
-  { name: "Dawn", role: "Finance", location: "University of Seville", quote: "I chose Spain to experience a culture completely different from my own.", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" },
-  { name: "Sylvia", role: "Fine Arts", location: "University of Seville", quote: "Seville taught me to listen to light and shadow.", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=2459&auto=format&fit=crop" }
+  { name: "Michael", role: "Art Conservation", location: "UGR Granada", quote: "Every day in Granada inspires me to preserve beauty that tells a story.", image: "/voices-from-spain/michael.jpg" },
+  { name: "Britney", role: "Fashion Design", location: "Barcelona", quote: "Barcelona sparked my creativity and gave me the confidence to be myself.", image: "/voices-from-spain/britney.jpg" },
+  { name: "Sylvia Lew", role: "Fine Arts", location: "University of Seville", quote: "Seville taught me to listen to light and shadow.", image: "/voices-from-spain/sylvia.jpg" },
+  { name: "Valentine Vallery Haryanto", role: "International Business", location: "Madrid", quote: "Madrid gave me the perfect foundation for my Spanish journey with incredible support.", image: "/hero/valentine-vallery.jpg" },
+  { name: "Melina Mauro", role: "Human Nutrition", location: "Barcelona", quote: "Barcelona's lifestyle and academic environment exceeded all my expectations.", image: "/hero/melina-mauro.jpg" },
+  { name: "Julius Caesar", role: "International Business", location: "Valencia", quote: "Valencia gave me the perfect blend of academic excellence and Mediterranean lifestyle.", image: "/hero/julius-caesar.jpg" }
 ];

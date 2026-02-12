@@ -3,7 +3,7 @@ import { GraduationCap, Globe, Briefcase, Plane, Sun, Wallet } from 'lucide-reac
 
 const WhySpain: React.FC = () => {
   return (
-    <section id="why-spain" className="py-24 px-6 bg-spain-offwhite relative overflow-hidden">
+    <section id="why-spain" className="py-24 px-6 bg-spain-offwhite relative">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-spain-yellow/10 blur-[150px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-spain-red/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -13,7 +13,7 @@ const WhySpain: React.FC = () => {
         <div className="text-center mb-16">
           <span className="text-spain-green font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Why Spain?</span>
           <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tighter text-spain-charcoal leading-none mb-6">
-            World-Class Education <br />
+            <span className="text-spain-red font-heading">World-Class</span> <span className="font-heading">Education</span> <br />
             <span className="font-serif italic font-normal text-spain-yellow">Starting from €700 a Year</span>
           </h2>
           <p className="text-gray-500 text-lg font-light leading-relaxed max-w-2xl mx-auto">

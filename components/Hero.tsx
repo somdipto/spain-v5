@@ -6,9 +6,9 @@ import { Instagram, MapPin } from 'lucide-react';
 const STUDENTS = [
   {
     id: 1,
-    name: "Elena Rodriguez",
-    handle: "@elena.in.madrid",
-    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2787&auto=format&fit=crop",
+    name: "Valentine Vallery Haryanto",
+    handle: "https://www.instagram.com/valentinevallery?igsh=cDhmMmoyZHpoZGV3",
+    image: "/hero/valentine-vallery.jpg",
     location: "Madrid",
     rotate: "-rotate-[6deg] md:-rotate-[10deg] group-hover:-rotate-[15deg] md:group-hover:-rotate-[18deg]",
     translate: "-translate-x-10 sm:-translate-x-14 md:-translate-x-20 lg:-translate-x-24 translate-y-2 group-hover:-translate-x-20 sm:group-hover:-translate-x-28 md:group-hover:-translate-x-36 lg:group-hover:-translate-x-44",
@@ -17,10 +17,10 @@ const STUDENTS = [
   },
   {
     id: 2,
-    name: "Marco Silva",
-    handle: "@marco.vlc",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=2662&auto=format&fit=crop",
-    location: "Valencia",
+    name: "Melina Mauro",
+    handle: "https://www.instagram.com/beyondnutritionbymelina?igsh=Y28ybzRycW9yZzh5",
+    image: "/hero/melina-mauro.jpg",
+    location: "Barcelona",
     rotate: "rotate-[6deg] md:rotate-[10deg] group-hover:rotate-[15deg] md:group-hover:rotate-[18deg]",
     translate: "translate-x-10 sm:translate-x-14 md:translate-x-20 lg:translate-x-24 translate-y-2 group-hover:translate-x-16 sm:group-hover:translate-x-24 md:group-hover:translate-x-32 lg:group-hover:translate-x-40",
     glow: "group-hover:shadow-glow-yellow",
@@ -28,14 +28,14 @@ const STUDENTS = [
   },
   {
     id: 3,
-    name: "Sarah Chen",
-    handle: "@sarah.travels",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=2459&auto=format&fit=crop",
-    location: "Barcelona",
-    rotate: "rotate-0",
-    translate: "group-hover:-translate-y-10",
-    glow: "group-hover:shadow-glow-red",
-    zIndex: "z-20",
+    name: "Julius Caesar",
+    handle: "https://www.instagram.com/ceasarr.julius?igsh=MThrYnhkMmxlcGF6Nw==",
+    image: "/hero/julius-caesar.jpg",
+    location: "Valencia",
+    rotate: "rotate-[6deg] md:rotate-[10deg] group-hover:rotate-[15deg] md:group-hover:rotate-[18deg]",
+    translate: "translate-x-10 sm:translate-x-14 md:translate-x-20 lg:translate-x-24 translate-y-2 group-hover:translate-x-16 sm:group-hover:translate-x-24 md:group-hover:translate-x-32 lg:group-hover:translate-x-40",
+    glow: "group-hover:shadow-glow-yellow",
+    zIndex: "z-10",
   }
 ];
 
@@ -47,10 +47,10 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-[-5%] left-[5%] w-[40%] h-[40%] bg-spain-red opacity-[0.03] blur-[140px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-8 w-full relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 
                 {/* Text Content Area */}
-                <div className="lg:col-span-6 xl:col-span-7 animate-fade-up text-center lg:text-left z-20">
+                <div className="animate-fade-up text-center lg:text-left z-20 order-1">
                     <h1 className="text-[2.7rem] sm:text-[3.6rem] md:text-[4.5rem] lg:text-[4.95rem] font-heading font-semibold tracking-tighter text-spain-charcoal leading-[1.0] mb-6 lg:mb-8">
                         The only <br className="hidden xl:block" />
                         <span className="font-serif italic font-normal text-spain-yellow">
@@ -117,49 +117,83 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Adaptive Card Stack Area */}
-                <div className="lg:col-span-6 xl:col-span-5 relative h-[250px] sm:h-[320px] lg:h-[580px] flex items-center justify-center perspective-2000 group mt-6 lg:mt-0">
-                    <div className="relative w-[120px] sm:w-[160px] lg:w-[300px] h-[180px] sm:h-[240px] lg:h-[420px]">
-                        {STUDENTS.map((student) => (
-                            <div 
-                                key={student.id}
-                                className={`
-                                    absolute inset-0 rounded-[2rem] lg:rounded-[2.5rem] glass p-1.5 shadow-premium
-                                    transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] origin-bottom
-                                    ${student.zIndex}
-                                    ${student.rotate}
-                                    ${student.translate}
-                                    ${student.glow}
-                                `}
-                            >
-                                <div className="relative w-full h-full rounded-[1.4rem] lg:rounded-[2.1rem] overflow-hidden bg-gray-100">
-                                    <img 
-                                        src={student.image} 
-                                        alt={student.name} 
-                                        className="w-full h-full object-cover object-top transition-all duration-1000 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-spain-charcoal/95 via-spain-charcoal/20 to-transparent"></div>
-                                    
-                                    <div className="absolute bottom-0 left-0 w-full p-4 sm:p-6 text-white">
-                                        <div className="flex items-center space-x-2 mb-2 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-150 transform translate-y-3 group-hover:translate-y-0">
-                                            <Instagram size={12} className="text-spain-yellow" />
-                                            <span className="text-[8px] font-black tracking-[0.2em] uppercase text-white/90">
-                                                {student.handle}
-                                            </span>
-                                        </div>
-                                        <h3 className="text-lg sm:text-xl font-serif italic leading-tight mb-1">{student.name}</h3>
-                                        <div className="flex items-center text-[8px] font-bold uppercase tracking-[0.3em] text-white/60">
-                                            <MapPin size={10} className="mr-2 text-spain-red" />
-                                            {student.location}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/* Perfectly Placed Card Stack Area */}
+          <div className="h-[450px] md:h-[600px] relative flex items-center justify-center order-2 lg:order-2 group">
+            
+            {/* Background card hints */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="relative w-[240px] h-[340px] md:w-[300px] md:h-[420px]">
+                {/* Background card outlines */}
+                <div className="absolute inset-0 rounded-[2.5rem] border border-white/20 bg-white/10 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 rounded-[2.5rem] border border-white/15 bg-white/7 backdrop-blur-sm transform translate-x-4"></div>
+                <div className="absolute inset-0 rounded-[2.5rem] border border-white/12 bg-white/5 backdrop-blur-sm transform translate-x-8"></div>
+              </div>
             </div>
+            
+            {/* Perspective Container */}
+            <div className="relative w-[240px] h-[340px] md:w-[300px] md:h-[420px] preserve-3d">
+              <style dangerouslySetInnerHTML={{ __html: `
+                .preserve-3d { transform-style: preserve-3d; }
+              `}} />
+              {STUDENTS.map((student, index) => (
+                <a 
+                  key={student.id}
+                  href={student.handle}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`
+                    absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl 
+                    transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]
+                    cursor-pointer ring-1 ring-black/5 hover:z-50
+                    ${index === 0 ? 'z-10 -rotate-3 scale-85 translate-x-[-30px] group-hover:-rotate-[25deg] group-hover:translate-x-[-60px] md:group-hover:translate-x-[-70px] group-hover:origin-bottom' : 
+                     index === 1 ? 'z-30 rotate-0 scale-85 translate-y-[-15px] group-hover:translate-y-[-25px] group-hover:scale-115' : 
+                     'z-20 rotate-3 scale-85 translate-x-[30px] group-hover:rotate-[25deg] group-hover:translate-x-[60px] md:group-hover:translate-x-[70px] group-hover:origin-bottom'}
+                  `}
+                >
+                  {/* Image with zoom effect */}
+                  <div className="relative w-full h-full overflow-hidden">
+                    <img 
+                      src={student.image} 
+                      alt={student.name} 
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                  
+                  {/* Card Content - Visible on Hover or for Top Card */}
+                  <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 text-white transition-all duration-500">
+                    <div className="flex items-center gap-1.5 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#F1BF00] mb-2">
+                      <MapPin size={14} className="text-[#AA151B]" />
+                      {student.location}
+                    </div>
+                    <h3 className="text-xl md:text-3xl font-serif italic mb-4">{student.name}</h3>
+                    
+                    <div className="flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <span className="text-xs font-semibold tracking-wider text-white/60">VIEW INSTAGRAM</span>
+                      <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 hover:bg-[#AA151B] transition-colors">
+                        <Instagram size={18} />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* Subtle Hint for Interaction */}
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-gray-400 text-[10px] font-bold tracking-[0.3em] uppercase opacity-40 group-hover:opacity-0 transition-opacity">
+              Hover to fan out
+            </div>
+          </div>
         </div>
+      </div>
+      
+      {/* Utility Styles */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .preserve-3d { transform-style: preserve-3d; }
+      `}} />
     </section>
   );
 };

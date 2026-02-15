@@ -207,14 +207,12 @@ const FlipCard: React.FC<FlipCardProps> = ({ feature, index, screenSize }) => {
     const contentChars = feature.items.reduce((sum, item) => sum + item.length, 0);
     const optimalTextSize = getOptimalTextSize(contentChars);
 
-    // Scroll Observer: Flips card when it enters the center of the viewport
+    // Scroll Observer: Flips card when it enters the center of the viewport with smooth animation
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsFlipped(true);
-                } else {
-                    setIsFlipped(false);
                 }
             },
             {
@@ -271,21 +269,17 @@ const FlipCard: React.FC<FlipCardProps> = ({ feature, index, screenSize }) => {
     return (
         <div 
             ref={cardRef}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
             className={`group perspective-1000 cursor-pointer ${gridClass} relative`}
         >
             {/* Background themed shadow */}
-            <div className={`absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] transition-all duration-1000 ease-in-out ${
+            <div className={`absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] ${
                 theme === 'red' ? 'bg-red-500/20 blur-xl' :
                 theme === 'yellow' ? 'bg-yellow-500/20 blur-xl' :
                 'bg-green-500/20 blur-xl'
-            } -z-10 ${
-                isHovered ? 'scale-105 opacity-30' : 'scale-100 opacity-20'
-            }`}></div>
+            } -z-10 opacity-20`}></div>
             <div className={`
-                relative w-full h-full transition-all duration-1000 transform-style-3d
-                ${isHovered ? '' : (isFlipped ? 'rotate-y-180' : '')}
+                relative w-full h-full transform-style-3d transition-transform duration-700 ease-in-out
+                ${isFlipped ? 'rotate-y-180' : ''}
             `}>
                 
                 {/* --- FRONT OF CARD --- */}

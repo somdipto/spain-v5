@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import ComingSoonRibbon from './ComingSoonRibbon';
 import { HERO_CONTENT } from '../constants';
 import { Instagram, MapPin } from 'lucide-react';
 
@@ -100,7 +101,8 @@ const Hero: React.FC = () => {
                             </div>
                         </button>
                         
-                        <button className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-base font-medium text-spain-charcoal bg-white/80 backdrop-blur-sm border-2 border-spain-charcoal/10 rounded-full shadow-md overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-spain-green/20 hover:border-spain-green hover:text-spain-green focus:outline-none">
+                        <div className="relative inline-block">
+                          <button className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-base font-medium text-spain-charcoal bg-white/80 backdrop-blur-sm border-2 border-spain-charcoal/10 rounded-full shadow-md overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-lg hover:shadow-spain-green/20 hover:border-spain-green hover:text-spain-green focus:outline-none">
                             {/* Background gradient that slides in */}
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-spain-green/10 to-spain-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
@@ -110,10 +112,13 @@ const Hero: React.FC = () => {
                             </div>
                             
                             {/* Button content */}
-                            <span className="relative z-10 flex items-center text-sm sm:text-base">
-                                Discover Programs
-                            </span>
-                        </button>
+              <span className="relative z-10 flex items-center text-sm sm:text-base">
+                Discover Programs
+              </span>
+              </button>
+              {/* Diagonal Coming Soon badge for Discover Programs */}
+              <ComingSoonRibbon size="small" rotateDeg={25} className="translate-x-2 -translate-y-8" />
+            </div>
                     </div>
                 </div>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 import Button from './Button';
+import ComingSoonRibbon from './ComingSoonRibbon';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,15 +37,20 @@ const Navbar: React.FC = () => {
                 hidden lg:flex items-center space-x-1 glass rounded-full px-2 py-1.5 transition-all duration-500
                 ${isScrolled ? 'shadow-premium px-4' : ''}
             `}>
-                {NAV_ITEMS.map((item) => (
-                    <a 
-                        key={item.label} 
-                        href={`#${item.href}`}
-                        className="px-4 sm:px-6 py-2.5 rounded-full text-[11px] sm:text-[13px] font-bold text-gray-700 hover:text-spain-charcoal hover:bg-white/50 transition-all uppercase tracking-widest"
-                    >
-                        {item.label}
-                    </a>
-                ))}
+        {NAV_ITEMS.map((item) => (
+          <div key={item.label} className="relative">
+            <a 
+              href={`#${item.href}`}
+              className="px-4 sm:px-6 pr-8 pt-2.5 pb-3 rounded-full text-[11px] sm:text-[13px] font-bold text-gray-700 hover:text-spain-charcoal hover:bg-white/50 transition-all uppercase tracking-widest"
+            >
+              {item.label}
+            </a>
+            {/* show a small bottom-right badge for blog and content without overlapping text */}
+            {(item.href === 'blog' || item.href === 'content') && (
+              <ComingSoonRibbon size="small" rotateDeg={25} className="translate-x-2 -translate-y-3" />
+            )}
+          </div>
+        ))}
             </nav>
 
             {/* CTA Button */}

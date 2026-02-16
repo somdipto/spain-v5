@@ -207,12 +207,14 @@ const FlipCard: React.FC<FlipCardProps> = ({ feature, index, screenSize }) => {
     const contentChars = feature.items.reduce((sum, item) => sum + item.length, 0);
     const optimalTextSize = getOptimalTextSize(contentChars);
 
-    // Scroll Observer: Flips card when it enters the center of the viewport with smooth animation
+    // Scroll Observer: Flips card when it enters the center of the viewport, returns to colored side when out of view
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsFlipped(true);
+                } else {
+                    setIsFlipped(false);
                 }
             },
             {

@@ -308,7 +308,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ feature, index, screenSize }) => {
                         <p className={`text-[10px] sm:text-xs uppercase tracking-widest font-bold opacity-60 mt-4 flex items-center gap-2
                              ${textColors[theme]}
                         `}>
-                            Hover to reveal <ArrowUpRight size={12} />
+                            Scroll to explore <ArrowUpRight size={12} />
                         </p>
                     </div>
 

@@ -9,29 +9,30 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
           {/* Logo and description */}
           <div className="lg:col-span-4">
-            <div className="flex items-center mb-6">
+            <div className="flex flex-col items-start mb-6">
               <img 
-                src="https://drive.google.com/thumbnail?id=17bFr0BSoDeExdJp4Cwrf1ndQB3iJNyHQ&sz=w200" 
+                src="https://drive.google.com/thumbnail?id=17bFr0BSoDeExdJp4Cwrf1ndQB3iJNyHQ&sz=w600" 
                 alt="Spain Academy Dark Logo" 
-                className="h-14 w-auto"
+                className="h-32 w-auto object-contain hover:scale-105 transition-transform duration-300 mb-4 -ml-12"
               />
-            </div>
-            <p className="text-gray-400 text-base leading-relaxed mb-6 font-light">
-              Your Study-in-Spain Starter Kit. We don't just move students; we build futures.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
-                <Youtube size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
-                <Linkedin size={18} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
-                <Twitter size={18} />
-              </a>
+              <h3 className="text-xl font-bold mb-2">Your Study-in-Spain Starter Kit</h3>
+              <p className="text-gray-400 text-base leading-relaxed font-light">
+                We don't just move students; we build futures.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
+                  <Instagram size={18} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
+                  <Youtube size={18} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
+                  <Linkedin size={18} />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-spain-green transition-all duration-300">
+                  <Twitter size={18} />
+                </a>
+              </div>
             </div>
           </div>
           

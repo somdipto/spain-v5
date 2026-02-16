@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import WhySpain from './components/WhySpain';
 import ValueProps from './components/ValueProps';
 import Timeline from './components/Timeline';
 import Destinations from './components/Destinations';
-import WhySpain from './components/WhySpain';
 import SATV from './components/SATV';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
@@ -17,10 +17,10 @@ const App: React.FC = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <WhySpain />
         <ValueProps />
         <Timeline />
         <Destinations />
-        <WhySpain />
         <SATV />
         <Testimonials />
         <FAQ />

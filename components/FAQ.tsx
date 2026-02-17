@@ -50,10 +50,10 @@ const FAQ: React.FC = () => {
                 <div className="p-6 sm:p-8 md:p-10">
                   <div className="flex items-center justify-between gap-4 sm:gap-6">
                     <div className="flex items-center gap-4 sm:gap-6">
-                      <span className={`
+                      <span className="
                         text-[10px] sm:text-[11px] font-black uppercase tracking-[0.4em] transition-all duration-700
-                        ${isHovered ? colorScheme.number : 'text-spain-red'}
-                      `}>
+                        text-black font-black
+                      ">
                         0{index + 1}
                       </span>
                       <h3 className={`
@@ -71,7 +71,7 @@ const FAQ: React.FC = () => {
                         : 'bg-transparent text-spain-charcoal/10 border-spain-charcoal/10'}
                     `}>
                       <span className="text-base sm:text-lg font-bold transition-all duration-500">
-                        {isHovered ? '→' : '→'}
+                        {isHovered ? '↓' : '→'}
                       </span>
                     </div>
                   </div>
@@ -83,7 +83,9 @@ const FAQ: React.FC = () => {
                   `}>
                     <div className="overflow-hidden">
                       <div className="pt-4 sm:pt-6 border-t border-spain-charcoal/10 max-w-3xl">
-                        <p className="text-sm sm:text-base md:text-lg text-spain-charcoal/80 font-normal leading-relaxed transform-gpu">
+                        <p className={`text-sm sm:text-base md:text-lg font-normal leading-relaxed transform-gpu transition-colors duration-700 ${
+                          isHovered ? 'text-white' : 'text-spain-charcoal/80'
+                        }`}>
                           {faq.answer}
                         </p>
                       </div>

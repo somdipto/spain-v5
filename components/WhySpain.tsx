@@ -90,21 +90,11 @@ const WhySpain: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <p className="text-sm text-gray-400 mb-6 italic">
+        {/* Note Section */}
+        <div className="text-center mt-12 px-6">
+          <p className="text-sm text-gray-400 italic max-w-2xl mx-auto">
             Note: Fees, waivers, and work rules can change; we'll guide you with the latest info for your case.
           </p>
-          <button className="group relative inline-flex items-center justify-center px-10 py-5 text-base font-bold text-white bg-gradient-to-r from-spain-red via-red-600 to-spain-red rounded-full shadow-lg shadow-spain-red/30 overflow-hidden transition-all duration-700 hover:scale-110 hover:shadow-2xl hover:shadow-spain-red/50 focus:outline-none border-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-spain-red via-red-600 to-spain-red opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1500 ease-out">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-            </div>
-            <span className="relative z-10 flex items-center">
-              Is Spain Right for Me?
-              <span className="ml-2 text-lg transition-all duration-500 group-hover:translate-x-2">→</span>
-            </span>
-          </button>
         </div>
       </div>
     </section>

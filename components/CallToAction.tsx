@@ -14,7 +14,7 @@ const CallToAction: React.FC = () => {
             <span className="inline-block bg-spain-red text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.5em] mb-6 shadow-lg">Final Call</span>
             
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-spain-charcoal tracking-tighter mb-6 leading-[0.9]">
-              From Here to <span className="font-serif italic font-normal text-spain-yellow">Spain</span>
+              From Here to <span className="font-serif italic font-normal text-spain-yellow">Your Future</span>
             </h2>
             
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
@@ -27,7 +27,7 @@ const CallToAction: React.FC = () => {
             {/* Primary Button */}
             <button className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-spain-green rounded-full shadow-lg shadow-spain-green/30 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-spain-green/50 focus:outline-none">
               <span className="flex items-center">
-                From Here to Spain
+                From Here to Your Future
                 <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
               </span>
             </button>

@@ -103,7 +103,7 @@ const FAQ: React.FC = () => {
         {/* Enhanced Action Footer */}
         <div className="mt-16 sm:mt-20 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 relative">
            {/* Book Consultation Button */}
-           <button className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white bg-gradient-to-r from-spain-green via-emerald-600 to-green-700 rounded-full shadow-lg shadow-spain-green/30 overflow-hidden transition-all duration-700 hover:scale-105 sm:hover:scale-110 hover:shadow-2xl hover:shadow-spain-green/50 focus:outline-none border-0">
+           <a href="https://cal.eu/spain-academy/fc" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white bg-gradient-to-r from-spain-green via-emerald-600 to-green-700 rounded-full shadow-lg shadow-spain-green/30 overflow-hidden transition-all duration-700 hover:scale-105 sm:hover:scale-110 hover:shadow-2xl hover:shadow-spain-green/50 focus:outline-none border-0">
                {/* Animated background waves */}
                <div className="absolute inset-0 bg-gradient-to-r from-spain-green via-emerald-500 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                
@@ -129,7 +129,7 @@ const FAQ: React.FC = () => {
                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100">
                    <div className="absolute inset-0 rounded-full bg-white/20 animate-ping"></div>
                </div>
-           </button>
+           </a>
            
            {/* WhatsApp Button */}
            <button className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold text-white bg-gradient-to-r from-green-600 via-emerald-500 to-teal-600 rounded-full shadow-lg shadow-green-600/30 overflow-hidden transition-all duration-700 hover:scale-105 sm:hover:scale-110 hover:shadow-2xl hover:shadow-green-600/50 focus:outline-none border-0">

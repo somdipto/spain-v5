@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-                <button className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-2.5 text-xs font-bold text-white bg-spain-green rounded-full shadow-lg shadow-spain-green/25 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-spain-green/40 focus:outline-none border-0">
+                <a href="https://cal.eu/spain-academy/fc" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-4 sm:px-6 py-2.5 text-xs font-bold text-white bg-spain-green rounded-full shadow-lg shadow-spain-green/25 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-spain-green/40 focus:outline-none border-0">
                     {/* Background gradient that slides in */}
                     <div className="absolute inset-0 bg-gradient-to-r from-spain-green via-spain-greenDark to-spain-green opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
                     <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100">
                         <div className="absolute inset-0 rounded-full bg-white/20 animate-ping"></div>
                     </div>
-                </button>
+                </a>
             </div>
 
             {/* Mobile Button */}
